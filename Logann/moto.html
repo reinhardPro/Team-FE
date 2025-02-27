@@ -4,34 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motor details</title>
-    <script>
-        async function fetchMoto() {
-            const params = new URLSearchParams(window.location.search);
-            const motoId = params.get('id');
-
-            if (!motoId) {
-                document.getElementById('details').innerHTML = "Geen motor ID opgegeven.";
-                return;
-            }
-
-            const response = await fetch(`http://localhost:3000/api/moto/${motoId}`);
-            const moto = await response.json();
-
-            if (moto.error) {
-                document.getElementById('details').innerHTML = moto.error;
-                return;
-            }
-
-            document.getElementById('details').innerHTML = `
-                <h2>${moto.brand} ${moto.model}</h2>
-                <p>Bouwjaar: ${moto.year}</p>
-                <p>Kleur: ${moto.color}</p>
-                <p>Prijs: €${moto.price}</p>
-            `;
-        }
-
-        window.onload = fetchMoto;
-    </script>
 </head>
 <body>
     <style>

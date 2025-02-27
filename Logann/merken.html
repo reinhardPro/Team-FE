@@ -4,21 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motormerken</title>
-    <script>
-        async function fetchMerken() {
-            const response = await fetch('http://localhost:3000/api/merken');
-            const merken = await response.json();
-            const list = document.getElementById('merkenlijst');
-
-            merken.forEach(merk => {
-                const li = document.createElement('li');
-                li.textContent = merk;
-                list.appendChild(li);
-            });
-        }
-
-        window.onload = fetchMerken;
-    </script>
     <style>
         /* Algemene styling */
         body {
