@@ -1,0 +1,22 @@
+{
+  "name": "team-fe",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000T\u0000e\u0000a\u0000m\u0000-\u0000F\u0000E\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reinhardPro/Team-FE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reinhardPro/Team-FE/issues"
+  },
+  "homepage": "https://github.com/reinhardPro/Team-FE#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
