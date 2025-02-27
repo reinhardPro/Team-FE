@@ -49,16 +49,13 @@
     </div>
 
     <script>
-        // Get the ID from the URL query string
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
 
-        // Check if the page was opened without an ID
         if (!id) {
             alert("You must select a product first!");
-            window.location.href = "products.html"; // Redirect to product list
+            window.location.href = "products.html";
         } else {
-            // Fetch product details
             fetch(`http://localhost:3000/OneProduct/${id}`)
                 .then(response => {
                     if (!response.ok) {
