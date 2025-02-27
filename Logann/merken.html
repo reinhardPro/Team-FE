@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motormerken</title>
+    <script>
+        async function fetchMerken() {
+            const response = await fetch('http://localhost:3000/api/merken');
+            const merken = await response.json();
+            const list = document.getElementById('merkenlijst');
+
+            merken.forEach(merk => {
+                const li = document.createElement('li');
+                li.textContent = merk;
+                list.appendChild(li);
+            });
+        }
+
+        window.onload = fetchMerken;
+    </script>
+    <style>
+        /* Algemene styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+    
+        /* Header styling */
+        h1 {
+            background-color: #0275d8;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+    
+        /* Lijst styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+    
+        li {
+            background: white;
+            margin: 10px auto;
+            padding: 15px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            transition: transform 0.2s ease-in-out;
+        }
+    
+        li:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Motormerken</h1>
+    <ul id="merkenlijst"></ul>
+</body>
+</html>
