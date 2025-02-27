@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .product-info {
+            border: 1px solid #ddd;
+            padding: 20px;
+            display: inline-block;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Product List</a>
+    </nav>
+
+    <div class="container">
+        <h1>Product Details</h1>
+        <div id="product-details" class="product-info"></div>
+    </div>
+
+    <script>
+        // Haal de ID op uit de URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        // Controleer of de pagina direct is geopend zonder een ID
+        if (!id) {
+            alert("You must select a product first!");
+            window.location.href = "products.html"; // Stuur gebruiker terug
+        } else {
+            // Haal productdetails op
+            fetch(`http://localhost:3000/OneProduct/${id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Product not found');
+                    }
+                    return response.json();
+                })
+                .then(product => {
+                    document.getElementById('product-details').innerHTML = `
+                        <h2>${product.name}</h2>
+                        <p><strong>Price:</strong> $${product.price}</p>
+                    `;
+                })
+                .catch(error => {
+                    document.getElementById('product-details').innerHTML = 
+                        `<p style="color: red;">Error: ${error.message}</p>`;
+                });
+        }
+    </script>
+
+</body>
+</html>
