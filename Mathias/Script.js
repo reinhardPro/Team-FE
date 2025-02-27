@@ -1,6 +1,6 @@
 // Fetch and display car list
 if (document.URL.includes("cars.html")) {
-    fetch("http://localhost:3000/cars")
+    fetch("http://localhost:3000/api/cars")
         .then(response => response.json())
         .then(data => {
             const carList = document.getElementById("car-list");
@@ -18,7 +18,7 @@ if (document.URL.includes("details.html")) {
     const urlParams = new URLSearchParams(window.location.search);
     const carId = urlParams.get("id");
 
-    fetch(`http://localhost:3000/cars/${carId}`)
+    fetch(`http://localhost:3000/api/cars/${carId}`)
         .then(response => response.json())
         .then(car => {
             if (!car.name) {
