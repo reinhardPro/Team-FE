@@ -47,34 +47,6 @@
         <h1>Product Details</h1>
         <div id="product-details" class="product-info"></div>
     </div>
-
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
-
-        if (!id) {
-            alert("You must select a product first!");
-            window.location.href = "products.html";
-        } else {
-            fetch(`http://localhost:3000/OneProduct/${id}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Product not found');
-                    }
-                    return response.json();
-                })
-                .then(product => {
-                    document.getElementById('product-details').innerHTML = `
-                        <h2>${product.name}</h2>
-                        <p><strong>Description:</strong> ${product.description}</p>
-                    `;
-                })
-                .catch(error => {
-                    document.getElementById('product-details').innerHTML = 
-                        `<p style="color: red;">Error: ${error.message}</p>`;
-                });
-        }
-    </script>
-
+<script src="Script.js"></script>
 </body>
 </html>
