@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Product List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,6 +27,21 @@
         .container {
             margin-top: 50px;
         }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -37,9 +52,9 @@
     </nav>
 
     <div class="container">
-        <h1>Welcome to Our Store</h1>
-        <p>Click on "Product List" in the navbar to view our products.</p>
+        <h1>Product List</h1>
+        <ul id="product-list"></ul>
     </div>
-
+<script src="Script.js"></script>
 </body>
 </html>
