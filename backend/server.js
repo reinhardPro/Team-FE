@@ -7,15 +7,15 @@ const bodyParser = require('body-parser');
 app.set("view engine", "handlebars");
 
 // Endpoint to get all cats Reinhard
-app.get('/AllCars', (req, res) => {
-    res.json(cars);
+app.get('/AllCats', (req, res) => {
+    res.json(cats);
 });
 
 // Endpoint to get cat by ID Reinhard
-app.get('/OneCar/:id', (req, res) => {
-    const car = cars.find(c => c.id === parseInt(req.params.id));
-    if (!car) return res.status(404).json({ message: "Car not found" });
-    res.json(car);
+app.get('/OneCat/:id', (req, res) => {
+    const cat = cats.find(c => c.id === parseInt(req.params.id));
+    if (!cat) return res.status(404).json({ message: "Cat not found" });
+    res.json(cat);
 });
 
 
