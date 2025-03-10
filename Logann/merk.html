@@ -3,47 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motor details</title>
-</head>
-<body>
+    <title>Motoren per Merk</title>
     <style>
-        /* Algemene styling */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
-            color: #333;
             text-align: center;
         }
-    
-        /* Header styling */
         h1 {
             background-color: #0275d8;
             color: white;
             padding: 15px;
-            margin: 0;
         }
-    
-        /* Details box */
-        #details {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
             background: white;
-            padding: 20px;
+            margin: 10px auto;
+            padding: 15px;
             width: 80%;
-            max-width: 500px;
-            margin: 20px auto;
+            max-width: 400px;
             border-radius: 5px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    
-        h2 {
-            color: #0275d8;
-            margin-bottom: 10px;
-        }
-    
-        p {
             font-size: 18px;
-            margin: 5px 0;
         }
         nav {
             background-color: #333;
@@ -55,18 +40,16 @@
             margin: 0 15px;
             font-size: 18px;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            margin-top: 50px;
-        }
     </style>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Product List</a>
-        </nav>
-    <h1>Motor details</h1>
-    <div id="details"></div>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="merken.html">Motormerken</a>
+    </nav>
+    <h1 id="merk-titel"></h1>
+    <ul id="moto-lijst"></ul>
+
+    <script src="ScriptMerk.js"></script>
 </body>
 </html>
